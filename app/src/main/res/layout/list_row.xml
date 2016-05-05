@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/list_row_selector"
+    android:padding="8dp" >
+
+    <!-- Thumbnail Image -->
+    <com.android.volley.toolbox.NetworkImageView
+        android:id="@+id/thumbnail"
+        android:layout_width="150dp"
+        android:layout_height="200dp"
+        android:layout_alignParentLeft="true"
+         />
+
+    <!-- Movie Title -->
+    <HorizontalScrollView
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/thumbnail"
+        android:layout_toRightOf="@+id/thumbnail"
+        android:id="@+id/horizontalScrollView"
+        android:layout_toLeftOf="@+id/rating"
+        android:layout_toStartOf="@+id/rating">
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/title"
+            android:scrollHorizontally="true"
+            android:layout_marginTop="8dp"
+            android:textStyle="bold"
+            android:ellipsize="end"
+            android:maxLines="1"/>
+    </HorizontalScrollView>
+
+
+    <!-- Rating -->
+    <TextView
+        android:id="@+id/rating"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/rating"
+        android:layout_alignBottom="@id/ratingicon"
+        android:layout_toLeftOf="@id/ratingicon"
+        android:layout_toStartOf="@id/ratingicon"
+        android:layout_marginBottom="9dp" />
+
+    <ImageView
+        android:id="@+id/ratingicon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/rating"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <ImageView
+        android:id="@+id/calendaricon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/calendar"
+        android:layout_below="@+id/rating"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <!-- Genre -->
+    <TextView
+        android:id="@+id/genre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/rating"
+        android:layout_marginTop="5dp"
+        android:layout_toRightOf="@+id/thumbnail"
+        android:textColor="@color/genre"
+        android:textSize="@dimen/genre" />
+
+    <!-- Release Year -->
+    <TextView
+        android:id="@+id/releaseYear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/year"
+        android:textSize="@dimen/year"
+        android:layout_alignBaseline="@+id/genre"
+        android:layout_alignBottom="@+id/genre"
+        android:layout_toLeftOf="@id/calendaricon"
+        android:layout_toStartOf="@id/calendaricon" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/overview"
+        android:layout_marginTop="8dp"
+        android:layout_toRightOf="@+id/thumbnail"
+        android:layout_below="@+id/genre"
+        android:ellipsize="end"
+        android:maxLines="4"/>
+
+    <View
+
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/darker_gray"
+        android:layout_below="@+id/overview"
+        android:layout_toRightOf="@+id/thumbnail"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="5dp"
+        android:id="@+id/lineView" />
+
+
+
+    <Button
+        android:id="@+id/moreinfobtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="More Info"
+        android:textStyle="italic"
+        android:background="#ffffff"
+        android:textSize="14dp"
+        android:layout_toRightOf="@+id/thumbnail"
+        android:layout_below="@+id/lineView"
+         />
+
+</RelativeLayout>
